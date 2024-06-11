@@ -591,3 +591,188 @@ insert into Activity (player_id, device_id, event_date, games_played)
 values ('3', '1', '2016-03-02', '0');
 insert into Activity (player_id, device_id, event_date, games_played)
 values ('3', '4', '2018-07-03', '5');
+
+-- https://leetcode.cn/problems/number-of-unique-subjects-taught-by-each-teacher/?envType=study-plan-v2&envId=sql-free-50
+Create table If Not Exists Teacher
+(
+    teacher_id int,
+    subject_id int,
+    dept_id    int
+);
+Truncate table Teacher;
+insert into Teacher (teacher_id, subject_id, dept_id)
+values ('1', '2', '3');
+insert into Teacher (teacher_id, subject_id, dept_id)
+values ('1', '2', '4');
+insert into Teacher (teacher_id, subject_id, dept_id)
+values ('1', '3', '3');
+insert into Teacher (teacher_id, subject_id, dept_id)
+values ('2', '1', '1');
+insert into Teacher (teacher_id, subject_id, dept_id)
+values ('2', '2', '1');
+insert into Teacher (teacher_id, subject_id, dept_id)
+values ('2', '3', '1');
+insert into Teacher (teacher_id, subject_id, dept_id)
+values ('2', '4', '1');
+
+-- https://leetcode.cn/problems/user-activity-for-the-past-30-days-i/?envType=study-plan-v2&envId=sql-free-50
+Drop table If Exists Activity;
+Create table If Not Exists Activity
+(
+    user_id       int,
+    session_id    int,
+    activity_date date,
+    activity_type ENUM ('open_session', 'end_session', 'scroll_down', 'send_message')
+);
+Truncate table Activity;
+insert into Activity (user_id, session_id, activity_date, activity_type)
+values ('1', '1', '2019-07-20', 'open_session');
+insert into Activity (user_id, session_id, activity_date, activity_type)
+values ('1', '1', '2019-07-20', 'scroll_down');
+insert into Activity (user_id, session_id, activity_date, activity_type)
+values ('1', '1', '2019-07-20', 'end_session');
+insert into Activity (user_id, session_id, activity_date, activity_type)
+values ('2', '4', '2019-07-20', 'open_session');
+insert into Activity (user_id, session_id, activity_date, activity_type)
+values ('2', '4', '2019-07-21', 'send_message');
+insert into Activity (user_id, session_id, activity_date, activity_type)
+values ('2', '4', '2019-07-21', 'end_session');
+insert into Activity (user_id, session_id, activity_date, activity_type)
+values ('3', '2', '2019-07-21', 'open_session');
+insert into Activity (user_id, session_id, activity_date, activity_type)
+values ('3', '2', '2019-07-21', 'send_message');
+insert into Activity (user_id, session_id, activity_date, activity_type)
+values ('3', '2', '2019-07-21', 'end_session');
+insert into Activity (user_id, session_id, activity_date, activity_type)
+values ('4', '3', '2019-06-25', 'open_session');
+insert into Activity (user_id, session_id, activity_date, activity_type)
+values ('4', '3', '2019-06-25', 'end_session');
+
+-- https://leetcode.cn/problems/sales-analysis-iii/description/?envType=study-plan-v2&envId=sql-free-50
+Drop table If Exists Product;
+Create table If Not Exists Product
+(
+    product_id   int,
+    product_name varchar(10),
+    unit_price   int
+);
+Drop table If Exists Sales;
+Create table If Not Exists Sales
+(
+    seller_id  int,
+    product_id int,
+    buyer_id   int,
+    sale_date  date,
+    quantity   int,
+    price      int
+);
+Truncate table Product;
+insert into Product (product_id, product_name, unit_price)
+values ('1', 'S8', '1000');
+insert into Product (product_id, product_name, unit_price)
+values ('2', 'G4', '800');
+insert into Product (product_id, product_name, unit_price)
+values ('3', 'iPhone', '1400');
+Truncate table Sales;
+insert into Sales (seller_id, product_id, buyer_id, sale_date, quantity, price)
+values ('1', '1', '1', '2019-01-21', '2', '2000');
+insert into Sales (seller_id, product_id, buyer_id, sale_date, quantity, price)
+values ('1', '2', '2', '2019-02-17', '1', '800');
+insert into Sales (seller_id, product_id, buyer_id, sale_date, quantity, price)
+values ('2', '2', '3', '2019-06-02', '1', '800');
+insert into Sales (seller_id, product_id, buyer_id, sale_date, quantity, price)
+values ('3', '3', '4', '2019-05-13', '2', '2800');
+
+-- https://leetcode.cn/problems/classes-more-than-5-students/description/?envType=study-plan-v2&envId=sql-free-50
+Create table If Not Exists Courses
+(
+    student varchar(255),
+    class   varchar(255)
+);
+Truncate table Courses;
+insert into Courses (student, class)
+values ('A', 'Math');
+insert into Courses (student, class)
+values ('B', 'English');
+insert into Courses (student, class)
+values ('C', 'Math');
+insert into Courses (student, class)
+values ('D', 'Biology');
+insert into Courses (student, class)
+values ('E', 'Math');
+insert into Courses (student, class)
+values ('F', 'Computer');
+insert into Courses (student, class)
+values ('G', 'Math');
+insert into Courses (student, class)
+values ('H', 'Math');
+insert into Courses (student, class)
+values ('I', 'Math');
+
+-- https://leetcode.cn/problems/find-followers-count/description/?envType=study-plan-v2&envId=sql-free-50
+Create table If Not Exists Followers
+(
+    user_id     int,
+    follower_id int
+);
+Truncate table Followers;
+insert into Followers (user_id, follower_id)
+values ('0', '1');
+insert into Followers (user_id, follower_id)
+values ('1', '0');
+insert into Followers (user_id, follower_id)
+values ('2', '0');
+insert into Followers (user_id, follower_id)
+values ('2', '1');
+
+-- https://leetcode.cn/problems/biggest-single-number/?envType=study-plan-v2&envId=sql-free-50
+Create table If Not Exists MyNumbers
+(
+    num int
+);
+Truncate table MyNumbers;
+insert into MyNumbers (num)
+values ('8');
+insert into MyNumbers (num)
+values ('8');
+insert into MyNumbers (num)
+values ('3');
+insert into MyNumbers (num)
+values ('3');
+insert into MyNumbers (num)
+values ('1');
+insert into MyNumbers (num)
+values ('4');
+insert into MyNumbers (num)
+values ('5');
+insert into MyNumbers (num)
+values ('6');
+
+-- https://leetcode.cn/problems/customers-who-bought-all-products/?envType=study-plan-v2&envId=sql-free-50
+Drop table If Exists Customer;
+Create table If Not Exists Customer
+(
+    customer_id int,
+    product_key int
+);
+Drop table If Exists Product;
+Create table Product
+(
+    product_key int
+);
+Truncate table Customer;
+insert into Customer (customer_id, product_key)
+values ('1', '5');
+insert into Customer (customer_id, product_key)
+values ('2', '6');
+insert into Customer (customer_id, product_key)
+values ('3', '5');
+insert into Customer (customer_id, product_key)
+values ('3', '6');
+insert into Customer (customer_id, product_key)
+values ('1', '6');
+Truncate table Product;
+insert into Product (product_key)
+values ('5');
+insert into Product (product_key)
+values ('6');

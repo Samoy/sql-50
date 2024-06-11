@@ -7,7 +7,7 @@
 
 ## 查询
 
-[query.sql](src/query.sql)：这个文件主要是考察查询语句的使用.
+[query.sql](src/query.sql)：这个文件主要是考察查询语句的使用。
 
 ## 连接
 
@@ -15,4 +15,8 @@
 
 ## 聚合函数
 
-[transact.sql](src/transact.sql)：这个文件主要考察常用的聚合函数.
+[transact.sql](src/transact.sql)：这个文件主要考察常用的聚合函数。
+
+## 排序和分组
+
+[sort_group.sql](src/sort_group.sql): 这个文件主要考察排序和分组。
