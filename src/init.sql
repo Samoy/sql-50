@@ -40,7 +40,7 @@ values ('5', 'Zack', 1);
 insert into Customer (id, name, referee_id)
 values ('6', 'Mark', 2);
 
-
+-- https://leetcode.cn/problems/big-countries/description/?envType=study-plan-v2&envId=sql-free-50
 Create table If Not Exists World
 (
     name       varchar(255),
@@ -61,7 +61,7 @@ values ('Andorra', 'Europe', '468', '78115', '3712000000');
 insert into World (name, continent, area, population, gdp)
 values ('Angola', 'Africa', '1246700', '20609294', '100990000000');
 
-
+-- https://leetcode.cn/problems/article-views-i/description/?envType=study-plan-v2&envId=sql-free-50
 Create table If Not Exists Views
 (
     article_id int,
@@ -84,7 +84,7 @@ insert into Views (article_id, author_id, viewer_id, view_date)
 values ('3', '4', '4', '2019-07-21');
 insert into Views (article_id, author_id, viewer_id, view_date)
 values ('3', '4', '4', '2019-07-21');
-
+-- https://leetcode.cn/problems/article-views-i/description/?envType=study-plan-v2&envId=sql-free-50
 Create table If Not Exists Tweets
 (
     tweet_id int,
@@ -95,7 +95,7 @@ insert into Tweets (tweet_id, content)
 values ('1', 'Vote for Biden');
 insert into Tweets (tweet_id, content)
 values ('2', 'Let us make America great again!');
-
+-- https://leetcode.cn/problems/replace-employee-id-with-the-unique-identifier/?envType=study-plan-v2&envId=sql-free-50
 Create table If Not Exists Employees
 (
     id   int,
@@ -124,7 +124,7 @@ insert into EmployeeUNI (id, unique_id)
 values ('11', '2');
 insert into EmployeeUNI (id, unique_id)
 values ('90', '3');
-
+-- https://leetcode.cn/problems/product-sales-analysis-i/?envType=study-plan-v2&envId=sql-free-50
 Create table If Not Exists Sales
 (
     sale_id    int,
@@ -133,7 +133,6 @@ Create table If Not Exists Sales
     quantity   int,
     price      int
 );
-
 Create table If Not Exists Product
 (
     product_id   int,
@@ -153,7 +152,7 @@ insert into Product (product_id, product_name)
 values ('200', 'Apple');
 insert into Product (product_id, product_name)
 values ('300', 'Samsung');
-
+-- https://leetcode.cn/problems/customer-who-visited-but-did-not-make-any-transactions/?envType=study-plan-v2&envId=sql-free-50
 Create table If Not Exists Visits
 (
     visit_id    int,
@@ -191,7 +190,7 @@ insert into Transactions (transaction_id, visit_id, amount)
 values ('12', '1', '910');
 insert into Transactions (transaction_id, visit_id, amount)
 values ('13', '2', '970');
-
+-- https://leetcode.cn/problems/rising-temperature/?envType=study-plan-v2&envId=sql-free-50
 Create table If Not Exists Weather
 (
     id          int,
@@ -207,7 +206,7 @@ insert into Weather (id, recordDate, temperature)
 values ('3', '2015-01-03', '20');
 insert into Weather (id, recordDate, temperature)
 values ('4', '2015-01-04', '30');
-
+-- https://leetcode.cn/problems/average-time-of-process-per-machine/?envType=study-plan-v2&envId=sql-free-50
 Create table If Not Exists Activity
 (
     machine_id    int,
@@ -240,7 +239,7 @@ insert into Activity (machine_id, process_id, activity_type, timestamp)
 values ('2', '1', 'start', '2.5');
 insert into Activity (machine_id, process_id, activity_type, timestamp)
 values ('2', '1', 'end', '5');
-
+-- https://leetcode.cn/problems/employee-bonus/?envType=study-plan-v2&envId=sql-free-50
 Create table If Not Exists Employee
 (
     empId      int,
@@ -267,7 +266,7 @@ insert into Bonus (empId, bonus)
 values ('2', '500');
 insert into Bonus (empId, bonus)
 values ('4', '2000');
-
+-- https://leetcode.cn/problems/students-and-examinations/?envType=study-plan-v2&envId=sql-free-50
 Create table If Not Exists Students
 (
     student_id   int,
@@ -321,7 +320,7 @@ insert into Examinations (student_id, subject_name)
 values ('2', 'Math');
 insert into Examinations (student_id, subject_name)
 values ('1', 'Math');
-
+-- https://leetcode.cn/problems/managers-with-at-least-5-direct-reports/?envType=study-plan-v2&envId=sql-free-50
 DROP TABLE IF EXISTS Employee;
 Create table If Not Exists Employee
 (
@@ -343,7 +342,7 @@ insert into Employee (id, name, department, managerId)
 values ('105', 'Anne', 'A', '101');
 insert into Employee (id, name, department, managerId)
 values ('106', 'Ron', 'B', '101');
-
+-- https://leetcode.cn/problems/confirmation-rate/?envType=study-plan-v2&envId=sql-free-50
 Create table If Not Exists Signups
 (
     user_id    int,
@@ -379,7 +378,7 @@ insert into Confirmations (user_id, time_stamp, action)
 values ('2', '2021-01-22 00:00:00', 'confirmed');
 insert into Confirmations (user_id, time_stamp, action)
 values ('2', '2021-02-28 23:59:59', 'timeout');
-
+-- https://leetcode.cn/problems/not-boring-movies/?envType=study-plan-v2&envId=sql-free-50
 Create table If Not Exists cinema
 (
     id          int,
@@ -398,8 +397,7 @@ insert into cinema (id, movie, description, rating)
 values ('4', 'Ice song', 'Fantacy', '8.6');
 insert into cinema (id, movie, description, rating)
 values ('5', 'House card', 'Interesting', '9.1');
-
-
+-- https://leetcode.cn/problems/average-selling-price/?envType=study-plan-v2&envId=sql-free-50
 Create table If Not Exists Prices
 (
     product_id int,
@@ -431,7 +429,7 @@ insert into UnitsSold (product_id, purchase_date, units)
 values ('2', '2019-02-10', '200');
 insert into UnitsSold (product_id, purchase_date, units)
 values ('2', '2019-03-22', '30');
-
+-- https://leetcode.cn/problems/project-employees-i/?envType=study-plan-v2&envId=sql-free-50
 Drop table If Exists Project;
 Create table If Not Exists Project
 (
@@ -465,7 +463,7 @@ insert into Employee (employee_id, name, experience_years)
 values ('3', 'John', '1');
 insert into Employee (employee_id, name, experience_years)
 values ('4', 'Doe', '2');
-
+-- https://leetcode.cn/problems/percentage-of-users-attended-a-contest/?envType=study-plan-v2&envId=sql-free-50
 Create table If Not Exists Users
 (
     user_id   int,
@@ -508,7 +506,7 @@ insert into Register (contest_id, user_id)
 values ('207', '2');
 insert into Register (contest_id, user_id)
 values ('210', '7');
-
+-- https://leetcode.cn/problems/queries-quality-and-percentage/?envType=study-plan-v2&envId=sql-free-50
 Create table If Not Exists Queries
 (
     query_name varchar(30),
@@ -529,7 +527,7 @@ insert into Queries (query_name, result, position, rating)
 values ('Cat', 'Siamese', '3', '3');
 insert into Queries (query_name, result, position, rating)
 values ('Cat', 'Sphynx', '7', '4');
-
+-- https://leetcode.cn/problems/monthly-transactions-i/?envType=study-plan-v2&envId=sql-free-50
 Drop table If EXISTS Transactions;
 Create table If Not Exists Transactions
 (
