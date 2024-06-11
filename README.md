@@ -2,12 +2,12 @@
 
 ## 查询
 
-[query.sql](./query.sql)
+[query.sql](src/query.sql)
 
 ## 连接
 
-[join.sql](./join.sql)
+[join.sql](src/join.sql)
 
 ## 聚合函数
 
-[transact.sql](./transact.sql)
+[transact.sql](src/transact.sql)
