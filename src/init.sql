@@ -546,3 +546,48 @@ insert into Transactions (id, country, state, amount, trans_date)
 values ('123', 'US', 'approved', '2000', '2019-01-01');
 insert into Transactions (id, country, state, amount, trans_date)
 values ('124', 'DE', 'approved', '2000', '2019-01-07');
+
+-- https://leetcode.cn/problems/immediate-food-delivery-ii/?envType=study-plan-v2&envId=sql-free-50
+Create table If Not Exists Delivery
+(
+    delivery_id                 int,
+    customer_id                 int,
+    order_date                  date,
+    customer_pref_delivery_date date
+);
+Truncate table Delivery;
+insert into Delivery (delivery_id, customer_id, order_date, customer_pref_delivery_date)
+values ('1', '1', '2019-08-01', '2019-08-02');
+insert into Delivery (delivery_id, customer_id, order_date, customer_pref_delivery_date)
+values ('2', '2', '2019-08-02', '2019-08-02');
+insert into Delivery (delivery_id, customer_id, order_date, customer_pref_delivery_date)
+values ('3', '1', '2019-08-11', '2019-08-12');
+insert into Delivery (delivery_id, customer_id, order_date, customer_pref_delivery_date)
+values ('4', '3', '2019-08-24', '2019-08-24');
+insert into Delivery (delivery_id, customer_id, order_date, customer_pref_delivery_date)
+values ('5', '3', '2019-08-21', '2019-08-22');
+insert into Delivery (delivery_id, customer_id, order_date, customer_pref_delivery_date)
+values ('6', '2', '2019-08-11', '2019-08-13');
+insert into Delivery (delivery_id, customer_id, order_date, customer_pref_delivery_date)
+values ('7', '4', '2019-08-09', '2019-08-09');
+
+-- https://leetcode.cn/problems/game-play-analysis-iv/?envType=study-plan-v2&envId=sql-free-50
+Drop table If Exists Activity;
+Create table If Not Exists Activity
+(
+    player_id    int,
+    device_id    int,
+    event_date   date,
+    games_played int
+);
+Truncate table Activity;
+insert into Activity (player_id, device_id, event_date, games_played)
+values ('1', '2', '2016-03-01', '5');
+insert into Activity (player_id, device_id, event_date, games_played)
+values ('1', '2', '2016-03-02', '6');
+insert into Activity (player_id, device_id, event_date, games_played)
+values ('2', '3', '2017-06-25', '1');
+insert into Activity (player_id, device_id, event_date, games_played)
+values ('3', '1', '2016-03-02', '0');
+insert into Activity (player_id, device_id, event_date, games_played)
+values ('3', '4', '2018-07-03', '5');

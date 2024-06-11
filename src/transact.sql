@@ -47,4 +47,30 @@ SELECT DATE_FORMAT(trans_date, '%Y-%m')         AS month,
 FROM Transactions
 GROUP BY month, country;
 
+-- 即时食物配送Ⅱ
+SELECT ROUND(
+               SUM(IF(d.order_date = d.customer_pref_delivery_date, 1, 0))
+                   /
+               (SELECT COUNT(*)
+                FROM (SELECT customer_id, MIN(order_date) AS min_order_date
+                      FROM Delivery
+                      GROUP BY customer_id) AS first_orders) * 100,
+               2
+       ) AS immediate_percentage
+FROM Delivery d
+WHERE (d.order_date, d.customer_id) IN
+      (SELECT MIN(order_date), customer_id
+       FROM Delivery
+       GROUP BY customer_id);
+
+-- 游戏玩法分析
+SELECT IFNULL(ROUND(COUNT(DISTINCT (Result.player_id)) / COUNT(DISTINCT (Activity.player_id)), 2), 0) AS fraction
+FROM (SELECT Activity.player_id AS player_id
+      FROM (SELECT player_id, DATE_ADD(MIN(event_date), INTERVAL 1 DAY) AS second_date
+            FROM Activity
+            GROUP BY player_id) AS Expected,
+           Activity
+      WHERE Activity.event_date = Expected.second_date
+        AND Activity.player_id = Expected.player_id) AS Result,
+     Activity;
 
