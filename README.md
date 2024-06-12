@@ -20,3 +20,7 @@
 ## 排序和分组
 
 [sort_group.sql](src/sort_group.sql): 这个文件主要考察排序和分组。
+
+## 高级查询和连接
+
+[advanced_query.sql](src/advanced_query.sql)：这个文件主要考察高级查询和连接。

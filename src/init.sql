@@ -776,3 +776,140 @@ insert into Product (product_key)
 values ('5');
 insert into Product (product_key)
 values ('6');
+
+-- https://leetcode.cn/problems/the-number-of-employees-which-report-to-each-employee/?envType=study-plan-v2&envId=sql-free-50
+Drop table If Exists Employees;
+Create table If Not Exists Employees
+(
+    employee_id int,
+    name        varchar(20),
+    reports_to  int,
+    age         int
+);
+Truncate table Employees;
+insert into Employees (employee_id, name, reports_to, age)
+values ('9', 'Hercy', NULL, '43');
+insert into Employees (employee_id, name, reports_to, age)
+values ('6', 'Alice', '9', '41');
+insert into Employees (employee_id, name, reports_to, age)
+values ('4', 'Bob', '9', '36');
+insert into Employees (employee_id, name, reports_to, age)
+values ('2', 'Winston', NULL, '37');
+
+-- https://leetcode.cn/problems/primary-department-for-each-employee/?envType=study-plan-v2&envId=sql-free-50
+Drop table If Exists Employee;
+Create table If Not Exists Employee
+(
+    employee_id   int,
+    department_id int,
+    primary_flag  ENUM ('Y','N')
+);
+Truncate table Employee;
+insert into Employee (employee_id, department_id, primary_flag)
+values ('1', '1', 'N');
+insert into Employee (employee_id, department_id, primary_flag)
+values ('2', '1', 'Y');
+insert into Employee (employee_id, department_id, primary_flag)
+values ('2', '2', 'N');
+insert into Employee (employee_id, department_id, primary_flag)
+values ('3', '3', 'N');
+insert into Employee (employee_id, department_id, primary_flag)
+values ('4', '2', 'N');
+insert into Employee (employee_id, department_id, primary_flag)
+values ('4', '3', 'Y');
+insert into Employee (employee_id, department_id, primary_flag)
+values ('4', '4', 'N');
+
+-- https://leetcode.cn/problems/triangle-judgement/description/?envType=study-plan-v2&envId=sql-free-50
+Create table If Not Exists Triangle
+(
+    x int,
+    y int,
+    z int
+);
+Truncate table Triangle;
+insert into Triangle (x, y, z)
+values ('13', '15', '30');
+insert into Triangle (x, y, z)
+values ('10', '20', '15');
+
+-- https://leetcode.cn/problems/consecutive-numbers/?envType=study-plan-v2&envId=sql-free-50
+Create table If Not Exists Logs
+(
+    id  int,
+    num int
+);
+Truncate table Logs;
+insert into Logs (id, num)
+values ('1', '1');
+insert into Logs (id, num)
+values ('2', '1');
+insert into Logs (id, num)
+values ('3', '1');
+insert into Logs (id, num)
+values ('4', '2');
+insert into Logs (id, num)
+values ('5', '1');
+insert into Logs (id, num)
+values ('6', '2');
+insert into Logs (id, num)
+values ('7', '2');
+
+-- https://leetcode.cn/problems/product-price-at-a-given-date/?envType=study-plan-v2&envId=sql-free-50
+Drop table If Exists Products;
+Create table If Not Exists Products
+(
+    product_id  int,
+    new_price   int,
+    change_date date
+);
+Truncate table Products;
+insert into Products (product_id, new_price, change_date)
+values ('1', '20', '2019-08-14');
+insert into Products (product_id, new_price, change_date)
+values ('2', '50', '2019-08-14');
+insert into Products (product_id, new_price, change_date)
+values ('1', '30', '2019-08-15');
+insert into Products (product_id, new_price, change_date)
+values ('1', '35', '2019-08-16');
+insert into Products (product_id, new_price, change_date)
+values ('2', '65', '2019-08-17');
+insert into Products (product_id, new_price, change_date)
+values ('3', '20', '2019-08-18');
+
+-- https://leetcode.cn/problems/last-person-to-fit-in-the-bus/description/?envType=study-plan-v2&envId=sql-free-50
+Create table If Not Exists Queue
+(
+    person_id   int,
+    person_name varchar(30),
+    weight      int,
+    turn        int
+);
+Truncate table Queue;
+insert into Queue (person_id, person_name, weight, turn)
+values ('5', 'Alice', '250', '1');
+insert into Queue (person_id, person_name, weight, turn)
+values ('4', 'Bob', '175', '5');
+insert into Queue (person_id, person_name, weight, turn)
+values ('3', 'Alex', '350', '2');
+insert into Queue (person_id, person_name, weight, turn)
+values ('6', 'John Cena', '400', '3');
+insert into Queue (person_id, person_name, weight, turn)
+values ('1', 'Winston', '500', '6');
+insert into Queue (person_id, person_name, weight, turn)
+values ('2', 'Marie', '200', '4');
+
+Create table If Not Exists Accounts
+(
+    account_id int,
+    income     int
+);
+Truncate table Accounts;
+insert into Accounts (account_id, income)
+values ('3', '108939');
+insert into Accounts (account_id, income)
+values ('2', '12747');
+insert into Accounts (account_id, income)
+values ('8', '87709');
+insert into Accounts (account_id, income)
+values ('6', '91796');
