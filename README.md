@@ -28,3 +28,7 @@
 ## 子查询
 
 [sub_query.sql](src/sub_query.sql)：这个文件主要考察子查询的使用。
+
+## 高级字符串函数/正则表达式/子句
+
+[skill.sql](src/skill.sql)：这个文件主要考察SQL中的其他技巧。

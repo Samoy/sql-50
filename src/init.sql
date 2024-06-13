@@ -1115,3 +1115,157 @@ insert into Department (id, name)
 values ('1', 'IT');
 insert into Department (id, name)
 values ('2', 'Sales');
+
+-- https://leetcode.cn/problems/fix-names-in-a-table/?envType=study-plan-v2&envId=sql-free-50
+Drop table If Exists Users;
+Create table If Not Exists Users
+(
+    user_id int,
+    name    varchar(40)
+);
+Truncate table Users;
+insert into Users (user_id, name)
+values ('1', 'aLice');
+insert into Users (user_id, name)
+values ('2', 'bOB');
+
+-- https://leetcode.cn/problems/patients-with-a-condition/?envType=study-plan-v2&envId=sql-free-50
+Create table If Not Exists Patients
+(
+    patient_id   int,
+    patient_name varchar(30),
+    conditions   varchar(100)
+);
+Truncate table Patients;
+insert into Patients (patient_id, patient_name, conditions)
+values ('1', 'Daniel', 'YFEV COUGH');
+insert into Patients (patient_id, patient_name, conditions)
+values ('2', 'Alice', '');
+insert into Patients (patient_id, patient_name, conditions)
+values ('3', 'Bob', 'DIAB100 MYOP');
+insert into Patients (patient_id, patient_name, conditions)
+values ('4', 'George', 'ACNE DIAB100');
+insert into Patients (patient_id, patient_name, conditions)
+values ('5', 'Alain', 'DIAB201');
+
+-- https://leetcode.cn/problems/delete-duplicate-emails/?envType=study-plan-v2&envId=sql-free-50
+Create table If Not Exists Person
+(
+    Id    int,
+    Email varchar(255)
+);
+Truncate table Person;
+insert into Person (id, email)
+values ('1', 'john@example.com');
+insert into Person (id, email)
+values ('2', 'bob@example.com');
+insert into Person (id, email)
+values ('3', 'john@example.com');
+
+-- https://leetcode.cn/problems/second-highest-salary/?envType=study-plan-v2&envId=sql-free-50
+Drop table If Exists Employee;
+Create table If Not Exists Employee
+(
+    id     int,
+    salary int
+);
+Truncate table Employee;
+insert into Employee (id, salary)
+values ('1', '100');
+
+-- https://leetcode.cn/problems/group-sold-products-by-the-date/?envType=study-plan-v2&envId=sql-free-50
+Create table If Not Exists Activities
+(
+    sell_date date,
+    product   varchar(20)
+);
+Truncate table Activities;
+insert into Activities (sell_date, product)
+values ('2020-05-30', 'Headphone');
+insert into Activities (sell_date, product)
+values ('2020-06-01', 'Pencil');
+insert into Activities (sell_date, product)
+values ('2020-06-02', 'Mask');
+insert into Activities (sell_date, product)
+values ('2020-05-30', 'Basketball');
+insert into Activities (sell_date, product)
+values ('2020-06-01', 'Bible');
+insert into Activities (sell_date, product)
+values ('2020-06-02', 'Mask');
+insert into Activities (sell_date, product)
+values ('2020-05-30', 'T-Shirt');
+
+-- https://leetcode.cn/problems/list-the-products-ordered-in-a-period/?envType=study-plan-v2&envId=sql-free-50
+Drop table If Exists Products;
+Create table If Not Exists Products
+(
+    product_id       int,
+    product_name     varchar(40),
+    product_category varchar(40)
+);
+Create table If Not Exists Orders
+(
+    product_id int,
+    order_date date,
+    unit       int
+);
+Truncate table Products;
+insert into Products (product_id, product_name, product_category)
+values ('1', 'Leetcode Solutions', 'Book');
+insert into Products (product_id, product_name, product_category)
+values ('2', 'Jewels of Stringology', 'Book');
+insert into Products (product_id, product_name, product_category)
+values ('3', 'HP', 'Laptop');
+insert into Products (product_id, product_name, product_category)
+values ('4', 'Lenovo', 'Laptop');
+insert into Products (product_id, product_name, product_category)
+values ('5', 'Leetcode Kit', 'T-shirt');
+Truncate table Orders;
+insert into Orders (product_id, order_date, unit)
+values ('1', '2020-02-05', '60');
+insert into Orders (product_id, order_date, unit)
+values ('1', '2020-02-10', '70');
+insert into Orders (product_id, order_date, unit)
+values ('2', '2020-01-18', '30');
+insert into Orders (product_id, order_date, unit)
+values ('2', '2020-02-11', '80');
+insert into Orders (product_id, order_date, unit)
+values ('3', '2020-02-17', '2');
+insert into Orders (product_id, order_date, unit)
+values ('3', '2020-02-24', '3');
+insert into Orders (product_id, order_date, unit)
+values ('4', '2020-03-01', '20');
+insert into Orders (product_id, order_date, unit)
+values ('4', '2020-03-04', '30');
+insert into Orders (product_id, order_date, unit)
+values ('4', '2020-03-04', '60');
+insert into Orders (product_id, order_date, unit)
+values ('5', '2020-02-25', '50');
+insert into Orders (product_id, order_date, unit)
+values ('5', '2020-02-27', '50');
+insert into Orders (product_id, order_date, unit)
+values ('5', '2020-03-01', '50');
+
+-- https://leetcode.cn/problems/find-users-with-valid-e-mails/?envType=study-plan-v2&envId=sql-free-50
+Drop table If Exists Users;
+Create table If Not Exists Users
+(
+    user_id int,
+    name    varchar(30),
+    mail    varchar(50)
+);
+Truncate table Users;
+insert into Users (user_id, name, mail)
+values ('1', 'Winston', 'winston@leetcode.com');
+insert into Users (user_id, name, mail)
+values ('2', 'Jonathan', 'jonathanisgreat');
+insert into Users (user_id, name, mail)
+values ('3', 'Annabelle', 'bella-@leetcode.com');
+insert into Users (user_id, name, mail)
+values ('4', 'Sally', 'sally.come@leetcode.com');
+insert into Users (user_id, name, mail)
+values ('5', 'Marwan', 'quarz#2020@leetcode.com');
+insert into Users (user_id, name, mail)
+values ('6', 'David', 'david69@gmail.com');
+insert into Users (user_id, name, mail)
+values ('7', 'Shapiro', '.shapo@leetcode.com');
