@@ -24,3 +24,7 @@
 ## 高级查询和连接
 
 [advanced_query.sql](src/advanced_query.sql)：这个文件主要考察高级查询和连接。
+
+## 子查询
+
+[sub_query.sql](src/sub_query.sql)：这个文件主要考察子查询的使用。

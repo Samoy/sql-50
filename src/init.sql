@@ -899,6 +899,7 @@ values ('1', 'Winston', '500', '6');
 insert into Queue (person_id, person_name, weight, turn)
 values ('2', 'Marie', '200', '4');
 
+-- https://leetcode.cn/problems/count-salary-categories/description/?envType=study-plan-v2&envId=sql-free-50
 Create table If Not Exists Accounts
 (
     account_id int,
@@ -913,3 +914,204 @@ insert into Accounts (account_id, income)
 values ('8', '87709');
 insert into Accounts (account_id, income)
 values ('6', '91796');
+
+-- https://leetcode.cn/problems/employees-whose-manager-left-the-company/?envType=study-plan-v2&envId=sql-free-50
+Drop table If Exists Employees;
+Create table If Not Exists Employees
+(
+    employee_id int,
+    name        varchar(20),
+    manager_id  int,
+    salary      int
+);
+Truncate table Employees;
+insert into Employees (employee_id, name, manager_id, salary)
+values ('3', 'Mila', '9', '60301');
+insert into Employees (employee_id, name, manager_id, salary)
+values ('12', 'Antonella', NULL, '31000');
+insert into Employees (employee_id, name, manager_id, salary)
+values ('13', 'Emery', NULL, '67084');
+insert into Employees (employee_id, name, manager_id, salary)
+values ('1', 'Kalel', '11', '21241');
+insert into Employees (employee_id, name, manager_id, salary)
+values ('9', 'Mikaela', NULL, '50937');
+insert into Employees (employee_id, name, manager_id, salary)
+values ('11', 'Joziah', '6', '28485');
+
+-- https://leetcode.cn/problems/exchange-seats/description/?envType=study-plan-v2&envId=sql-free-50
+Create table If Not Exists Seat
+(
+    id      int,
+    student varchar(255)
+);
+Truncate table Seat;
+insert into Seat (id, student)
+values ('1', 'Abbot');
+insert into Seat (id, student)
+values ('2', 'Doris');
+insert into Seat (id, student)
+values ('3', 'Emerson');
+insert into Seat (id, student)
+values ('4', 'Green');
+insert into Seat (id, student)
+values ('5', 'Jeames');
+
+-- https://leetcode.cn/problems/movie-rating/?envType=study-plan-v2&envId=sql-free-50
+Create table If Not Exists Movies
+(
+    movie_id int,
+    title    varchar(30)
+);
+Drop table If Exists Users;
+Create table If Not Exists Users
+(
+    user_id int,
+    name    varchar(30)
+);
+Create table If Not Exists MovieRating
+(
+    movie_id   int,
+    user_id    int,
+    rating     int,
+    created_at date
+);
+Truncate table Movies;
+insert into Movies (movie_id, title)
+values ('1', 'Avengers');
+insert into Movies (movie_id, title)
+values ('2', 'Frozen 2');
+insert into Movies (movie_id, title)
+values ('3', 'Joker');
+Truncate table Users;
+insert into Users (user_id, name)
+values ('1', 'Daniel');
+insert into Users (user_id, name)
+values ('2', 'Monica');
+insert into Users (user_id, name)
+values ('3', 'Maria');
+insert into Users (user_id, name)
+values ('4', 'James');
+Truncate table MovieRating;
+insert into MovieRating (movie_id, user_id, rating, created_at)
+values ('1', '1', '3', '2020-01-12');
+insert into MovieRating (movie_id, user_id, rating, created_at)
+values ('1', '2', '4', '2020-02-11');
+insert into MovieRating (movie_id, user_id, rating, created_at)
+values ('1', '3', '2', '2020-02-12');
+insert into MovieRating (movie_id, user_id, rating, created_at)
+values ('1', '4', '1', '2020-01-01');
+insert into MovieRating (movie_id, user_id, rating, created_at)
+values ('2', '1', '5', '2020-02-17');
+insert into MovieRating (movie_id, user_id, rating, created_at)
+values ('2', '2', '2', '2020-02-01');
+insert into MovieRating (movie_id, user_id, rating, created_at)
+values ('2', '3', '2', '2020-03-01');
+insert into MovieRating (movie_id, user_id, rating, created_at)
+values ('3', '1', '3', '2020-02-22');
+insert into MovieRating (movie_id, user_id, rating, created_at)
+values ('3', '2', '4', '2020-02-25');
+
+-- https://leetcode.cn/problems/restaurant-growth/description/?envType=study-plan-v2&envId=sql-free-50
+Drop table If Exists Customer;
+Create table If Not Exists Customer
+(
+    customer_id int,
+    name        varchar(20),
+    visited_on  date,
+    amount      int
+);
+Truncate table Customer;
+insert into Customer (customer_id, name, visited_on, amount)
+values ('1', 'Jhon', '2019-01-01', '100');
+insert into Customer (customer_id, name, visited_on, amount)
+values ('2', 'Daniel', '2019-01-02', '110');
+insert into Customer (customer_id, name, visited_on, amount)
+values ('3', 'Jade', '2019-01-03', '120');
+insert into Customer (customer_id, name, visited_on, amount)
+values ('4', 'Khaled', '2019-01-04', '130');
+insert into Customer (customer_id, name, visited_on, amount)
+values ('5', 'Winston', '2019-01-05', '110');
+insert into Customer (customer_id, name, visited_on, amount)
+values ('6', 'Elvis', '2019-01-06', '140');
+insert into Customer (customer_id, name, visited_on, amount)
+values ('7', 'Anna', '2019-01-07', '150');
+insert into Customer (customer_id, name, visited_on, amount)
+values ('8', 'Maria', '2019-01-08', '80');
+insert into Customer (customer_id, name, visited_on, amount)
+values ('9', 'Jaze', '2019-01-09', '110');
+insert into Customer (customer_id, name, visited_on, amount)
+values ('1', 'Jhon', '2019-01-10', '130');
+insert into Customer (customer_id, name, visited_on, amount)
+values ('3', 'Jade', '2019-01-10', '150');
+
+-- https://leetcode.cn/problems/friend-requests-ii-who-has-the-most-friends/description/?envType=study-plan-v2&envId=sql-free-50
+Create table If Not Exists RequestAccepted
+(
+    requester_id int  not null,
+    accepter_id  int  null,
+    accept_date  date null
+);
+Truncate table RequestAccepted;
+insert into RequestAccepted (requester_id, accepter_id, accept_date)
+values ('1', '2', '2016/06/03');
+insert into RequestAccepted (requester_id, accepter_id, accept_date)
+values ('1', '3', '2016/06/08');
+insert into RequestAccepted (requester_id, accepter_id, accept_date)
+values ('2', '3', '2016/06/08');
+insert into RequestAccepted (requester_id, accepter_id, accept_date)
+values ('3', '4', '2016/06/09');
+
+-- https://leetcode.cn/problems/investments-in-2016/description/?envType=study-plan-v2&envId=sql-free-50
+Create Table If Not Exists Insurance
+(
+    pid      int,
+    tiv_2015 float,
+    tiv_2016 float,
+    lat      float,
+    lon      float
+);
+Truncate table Insurance;
+insert into Insurance (pid, tiv_2015, tiv_2016, lat, lon)
+values ('1', '10', '5', '10', '10');
+insert into Insurance (pid, tiv_2015, tiv_2016, lat, lon)
+values ('2', '20', '20', '20', '20');
+insert into Insurance (pid, tiv_2015, tiv_2016, lat, lon)
+values ('3', '10', '30', '20', '20');
+insert into Insurance (pid, tiv_2015, tiv_2016, lat, lon)
+values ('4', '10', '40', '40', '40');
+
+-- https://leetcode.cn/problems/department-top-three-salaries/?envType=study-plan-v2&envId=sql-free-50
+Drop table If Exists Employee;
+Create table If Not Exists Employee
+(
+    id           int,
+    name         varchar(255),
+    salary       int,
+    departmentId int
+);
+Drop table If Exists Department;
+Create table If Not Exists Department
+(
+    id   int,
+    name varchar(255)
+);
+Truncate table Employee;
+insert into Employee (id, name, salary, departmentId)
+values ('1', 'Joe', '85000', '1');
+insert into Employee (id, name, salary, departmentId)
+values ('2', 'Henry', '80000', '2');
+insert into Employee (id, name, salary, departmentId)
+values ('3', 'Sam', '60000', '2');
+insert into Employee (id, name, salary, departmentId)
+values ('4', 'Max', '90000', '1');
+insert into Employee (id, name, salary, departmentId)
+values ('5', 'Janet', '69000', '1');
+insert into Employee (id, name, salary, departmentId)
+values ('6', 'Randy', '85000', '1');
+insert into Employee (id, name, salary, departmentId)
+values ('7', 'Will', '70000', '1');
+Truncate table Department;
+insert into Department (id, name)
+values ('1', 'IT');
+insert into Department (id, name)
+values ('2', 'Sales');
